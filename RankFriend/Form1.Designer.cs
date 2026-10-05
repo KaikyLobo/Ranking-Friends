@@ -59,7 +59,7 @@
             this.lblNome.Location = new System.Drawing.Point(51, 101);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(61, 23);
-            this.lblNome.TabIndex = 7;
+            this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
             // lblPosicao
@@ -91,7 +91,7 @@
             0});
             this.nudPosicao.Name = "nudPosicao";
             this.nudPosicao.Size = new System.Drawing.Size(91, 30);
-            this.nudPosicao.TabIndex = 4;
+            this.nudPosicao.TabIndex = 2;
             this.nudPosicao.Value = new decimal(new int[] {
             1,
             0,
@@ -115,7 +115,7 @@
             this.btnEditar.Location = new System.Drawing.Point(206, 149);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(137, 37);
-            this.btnEditar.TabIndex = 2;
+            this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -126,7 +126,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(360, 149);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(137, 37);
-            this.btnExcluir.TabIndex = 1;
+            this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -171,6 +171,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ranking dos Amigos";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.nudPosicao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAmigos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erroProvider)).EndInit();

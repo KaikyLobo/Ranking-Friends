@@ -14,6 +14,7 @@ namespace RankFriend
             InitializeComponent();
             ConfigurarTabela();
             CarregarAmigos();
+            KeyPreview = true;
         }
 
         private void ConfigurarTabela()
@@ -243,6 +244,27 @@ namespace RankFriend
             nudPosicao.Value = 1;
             erroProvider.Clear();
             txtNome.Focus();
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            txtNome.Focus();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAdicionar.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                btnEditar.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Delete)
+            {
+                btnExcluir.PerformClick();
+            }
         }
     }
 }
