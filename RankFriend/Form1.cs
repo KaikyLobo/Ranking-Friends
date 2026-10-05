@@ -2,6 +2,7 @@
 using RankingAmigos.Servicos;
 using System;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace RankFriend
 {
@@ -29,14 +30,26 @@ namespace RankFriend
 
         private void CarregarAmigos()
         {
-            dgvAmigos.DataSource = null;
-            dgvAmigos.DataSource = servico.Listar();
-
-            if (dgvAmigos.Columns.Count > 0)
+            try
             {
-                dgvAmigos.Columns["Id"].Visible = false;
-                dgvAmigos.Columns["Nome"].HeaderText = "Nome";
-                dgvAmigos.Columns["Posicao"].HeaderText = "Posição";
+                dgvAmigos.DataSource = null;
+                dgvAmigos.DataSource = servico.Listar();
+
+                if (dgvAmigos.Columns.Count > 0)
+                {
+                    dgvAmigos.Columns["Id"].Visible = false;
+                    dgvAmigos.Columns["Nome"].HeaderText = "Nome";
+                    dgvAmigos.Columns["Posicao"].HeaderText = "Posição";
+                }
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show(
+                    "Não foi possível conectar ao banco de dados. Verifique se o MySQL está em execução.",
+                    "Erro de banco de dados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
@@ -95,6 +108,15 @@ namespace RankFriend
                     MessageBoxIcon.Warning
                 );
             }
+            catch (MySqlException)
+            {
+                MessageBox.Show(
+                    "Não foi possível acessar o banco de dados. Verifique se o MySQL está em execução.",
+                    "Erro de banco de dados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
             catch (Exception)
             {
                 MessageBox.Show(
@@ -151,6 +173,15 @@ namespace RankFriend
                     "Atenção",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
+                );
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show(
+                    "Não foi possível acessar o banco de dados. Verifique se o MySQL está em execução.",
+                    "Erro de banco de dados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
                 );
             }
             catch (Exception)
@@ -213,6 +244,15 @@ namespace RankFriend
                     MessageBoxIcon.Warning
                 );
             }
+            catch (MySqlException)
+            {
+                MessageBox.Show(
+                    "Não foi possível acessar o banco de dados. Verifique se o MySQL está em execução.",
+                    "Erro de banco de dados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
             catch (Exception)
             {
                 MessageBox.Show(
@@ -253,15 +293,16 @@ namespace RankFriend
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && (txtNome.Focused || nudPosicao.Focused))
             {
+                e.SuppressKeyPress = true;
                 btnAdicionar.PerformClick();
             }
             else if (e.KeyCode == Keys.F2)
             {
                 btnEditar.PerformClick();
             }
-            else if (e.KeyCode == Keys.Delete)
+            else if (e.KeyCode == Keys.Delete && dgvAmigos.Focused)
             {
                 btnExcluir.PerformClick();
             }

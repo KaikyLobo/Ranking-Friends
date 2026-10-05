@@ -69,7 +69,7 @@
             this.lblPosicao.Location = new System.Drawing.Point(446, 101);
             this.lblPosicao.Name = "lblPosicao";
             this.lblPosicao.Size = new System.Drawing.Size(71, 23);
-            this.lblPosicao.TabIndex = 5;
+            this.lblPosicao.TabIndex = 2;
             this.lblPosicao.Text = "Posição:";
             // 
             // txtNome
@@ -78,7 +78,7 @@
             this.txtNome.Location = new System.Drawing.Point(114, 98);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(297, 30);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 1;
             // 
             // nudPosicao
             // 
@@ -91,7 +91,7 @@
             0});
             this.nudPosicao.Name = "nudPosicao";
             this.nudPosicao.Size = new System.Drawing.Size(91, 30);
-            this.nudPosicao.TabIndex = 2;
+            this.nudPosicao.TabIndex = 3;
             this.nudPosicao.Value = new decimal(new int[] {
             1,
             0,
@@ -104,7 +104,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(51, 149);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(137, 37);
-            this.btnAdicionar.TabIndex = 3;
+            this.btnAdicionar.TabIndex = 4;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -115,7 +115,7 @@
             this.btnEditar.Location = new System.Drawing.Point(206, 149);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(137, 37);
-            this.btnEditar.TabIndex = 3;
+            this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -126,7 +126,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(360, 149);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(137, 37);
-            this.btnExcluir.TabIndex = 4;
+            this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -145,7 +145,7 @@
             this.dgvAmigos.RowHeadersWidth = 51;
             this.dgvAmigos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAmigos.Size = new System.Drawing.Size(766, 299);
-            this.dgvAmigos.TabIndex = 0;
+            this.dgvAmigos.TabIndex = 7;
             this.dgvAmigos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAmigos_CellClick);
             // 
             // erroProvider

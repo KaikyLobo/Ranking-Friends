@@ -25,6 +25,9 @@ namespace RankingAmigos.Servicos
 
             List<Amigo> amigos = repositorio.Listar();
 
+            if (posicao > amigos.Count + 1)
+                throw new RegraNegocioException("A posição não pode ser maior que " + (amigos.Count + 1) + ".");
+
             foreach (Amigo amigo in amigos)
             {
                 if (amigo.Posicao >= posicao)
@@ -56,6 +59,9 @@ namespace RankingAmigos.Servicos
 
             if (antigo == null)
                 throw new RegraNegocioException("Amigo não encontrado.");
+
+            if (amigo.Posicao > amigos.Count)
+                throw new RegraNegocioException("A posição não pode ser maior que " + amigos.Count + ".");
 
             if (amigo.Posicao < antigo.Posicao)
             {
